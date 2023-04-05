@@ -20,13 +20,32 @@ const Navbar = () => {
         }} 
         >
           <img src={logo} alt="logo" 
-          className='w-14 h-14 object-contain pl-0 ml-0' />
-          <p className='text-white text-[18px] pr-0 mr-0 font-bold cursor-pointer flex'>
+          className='w-14 h-14 object-contain' 
+          onMouseEnter={ (e) => e(document.querySelector('#root').classList.add('content'))
+          }
+          onMouseLeave={
+            (e) => e(document.querySelector('#root').classList.remove('content'))
+          }
+          />
+          <p className="text-white text-[18px] font-bold cursor-pointer flex" onMouseEnter={ (e) => e(document.querySelector('#root').classList.add('content'))
+          }
+          onMouseLeave={
+            (e) => e(document.querySelector('#root').classList.remove('content'))
+          }
+
+          >
+          
             Raphael Busquet&nbsp; 
             <span className='sm:block hidden'>| Web Developer</span>
           </p>
         </Link>
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <ul className="list-none hidden sm:flex flex-row gap-10"
+          onMouseEnter={ (e) => e(document.querySelector('#root').classList.add('content'))
+        }
+        onMouseLeave={
+          (e) => e(document.querySelector('#root').classList.remove('content'))
+        }
+        >
           {navLinks.map((link) => (
             <li
             key={link.id}
