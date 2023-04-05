@@ -26,6 +26,10 @@ import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
+// icons
+import sun from "./sun.svg"
+import moon from "./moon.svg"
+
 import carrent from "./carrent.png";
 import firstsite from "./first.png"
 import summarycomponent from "./summarycomponent.jpg";
@@ -34,6 +38,8 @@ import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
 export {
+  sun,
+  moon,
   firstsite,
   componentperfum,
   summarycomponent,
