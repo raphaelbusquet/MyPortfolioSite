@@ -4,4 +4,4 @@
 
 ### To acess and see the site, click the link bellow: 
 
-- <a href="https://raphaelbusquet.netlify.app/" target="_blank">My Portfolio Site</a>
+- <a href="https://raphaelbusquet.netlify.app/" target="blank">My Portfolio Site</a>
