@@ -4,4 +4,4 @@
 
 ### To acess and see the site, click the link bellow: 
 
-https://raphaelbusquet.github.io/MyPortfolioSite/
+https://flourishing-gelato-bb7559.netlify.app/
