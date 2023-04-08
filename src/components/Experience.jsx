@@ -46,8 +46,20 @@ const Experience = () => {
       <motion.div
         variants={textVariant()}
       >
-        <p className={styles.sectionSubText}>What I have done so far?</p>
-        <h2 className={styles.sectionHeadText}>Work Experience.</h2>
+        <p className={styles.sectionSubText}
+            onMouseEnter={ () => document.querySelector('#root').classList.add('content')
+          }
+          onMouseLeave={
+            () => document.querySelector('#root').classList.remove('content')
+          }
+        >What I have done so far?</p>
+        <h2 className={styles.sectionHeadText}
+            onMouseEnter={ () => document.querySelector('#root').classList.add('content')
+          }
+          onMouseLeave={
+            () => document.querySelector('#root').classList.remove('content')
+          }
+        >Work Experience.</h2>
         <p className="text-justify text-white text-[16px]">As you know, I'm looking for my first professional opportunity, but here's an example of what this section would look like if it was fully complete. Soon it will be complete with my real experiences... </p>
 
       </motion.div>

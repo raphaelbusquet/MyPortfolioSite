@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom"
 
 import { styles } from "../styles"
@@ -21,16 +21,16 @@ const Navbar = () => {
         >
           <img src={logo} alt="logo" 
           className='w-14 h-14 object-contain' 
-          onMouseEnter={ (e) => e(document.querySelector('#root').classList.add('content'))
+          onMouseEnter={ () => document.querySelector('#root').classList.add('content')
           }
           onMouseLeave={
-            (e) => e(document.querySelector('#root').classList.remove('content'))
+            () => document.querySelector('#root').classList.remove('content')
           }
           />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex" onMouseEnter={ (e) => e(document.querySelector('#root').classList.add('content'))
+          <p className="text-white text-[18px] font-bold cursor-pointer flex" onMouseEnter={ () => document.querySelector('#root').classList.add('content')
           }
           onMouseLeave={
-            (e) => e(document.querySelector('#root').classList.remove('content'))
+            () => document.querySelector('#root').classList.remove('content')
           }
 
           >
@@ -40,10 +40,10 @@ const Navbar = () => {
           </p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10"
-          onMouseEnter={ (e) => e(document.querySelector('#root').classList.add('content'))
+          onMouseEnter={ () => document.querySelector('#root').classList.add('content')
         }
         onMouseLeave={
-          (e) => e(document.querySelector('#root').classList.remove('content'))
+          () => document.querySelector('#root').classList.remove('content')
         }
         >
           {navLinks.map((link) => (

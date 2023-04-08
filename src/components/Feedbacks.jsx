@@ -14,6 +14,8 @@ const FeedbackCard = ({ index, testimonial, name, designation, company, image })
     <p className="text-white font-black text-[48px]">"</p>
 
     <div className="mt-1">
+
+      
     <p className="text-white tracking-wider text-[18px]">{testimonial}</p>
 
     <div className="mt-7 flex justify-between items-center gap-1">
@@ -41,13 +43,27 @@ const Feedbacks = () => {
         <motion.div
           variants={textVariant()}
         >
-          <p className={styles.sectionSubText}>What others say</p>
-          <h2 className={styles.sectionHeadText}>Testimonials.</h2>
+          <div
+            onMouseEnter={ () => document.querySelector('#root').classList.add('content')
+          }
+          onMouseLeave={
+            () => document.querySelector('#root').classList.remove('content')
+          }
+          >
+            <p className={styles.sectionSubText}>What others say</p>
+            <h2 className={styles.sectionHeadText}>Testimonials.</h2>
+          </div>
           <p className="italic text-[14px] text-[#ffffff87]">ps.: I really hope to get one of these testimonials soon! </p>
         </motion.div>
       </div>
 
-      <div className={`${styles.paddingX} -mt-20 pb-14 flex flex-wrap gap-7`}>
+      <div className={`${styles.paddingX} -mt-20 pb-14 flex flex-wrap gap-7`}
+        onMouseEnter={ () => document.querySelector('#root').classList.add('content')
+      }
+      onMouseLeave={
+        () => document.querySelector('#root').classList.remove('content')
+      }
+      >
         {testimonials.map((testimonial, index) => (
           <FeedbackCard 
             key={testimonial.name}

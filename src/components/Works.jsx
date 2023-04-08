@@ -63,8 +63,16 @@ const Works = () => {
        <motion.div
         variants={textVariant()}
       >
-        <p className={styles.sectionSubText}>My work</p>
-        <h2 className={styles.sectionHeadText}>Projects.</h2>
+        <div
+          onMouseEnter={ () => document.querySelector('#root').classList.add('content')
+        }
+        onMouseLeave={
+          () => document.querySelector('#root').classList.remove('content')
+        }
+        >
+          <p className={styles.sectionSubText}>My work</p>
+          <h2 className={styles.sectionHeadText}>Projects.</h2>
+        </div>
 
       </motion.div>
 
@@ -77,7 +85,13 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className='mt-20 flex flex-wrap gap-7'>
+      <div className='mt-20 flex flex-wrap gap-7'
+        onMouseEnter={ () => document.querySelector('#root').classList.add('content')
+      }
+      onMouseLeave={
+        () => document.querySelector('#root').classList.remove('content')
+      }
+      >
         {projects.map((project, index) => (
           <ProjectCard 
           key={`project-${index}`} 

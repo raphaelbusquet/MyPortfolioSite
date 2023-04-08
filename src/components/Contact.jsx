@@ -70,6 +70,11 @@ const Contact = () => {
           ref={formRef}
           onSubmit={handleSubmit}
           className='mt-12 flex flex-col gap-8'
+          onMouseEnter={ () => document.querySelector('#root').classList.add('content')
+        }
+        onMouseLeave={
+          () => document.querySelector('#root').classList.remove('content')
+        }
         >
           <label className='flex flex-col'>
             <span className='text-white font-medium mb-4'>Your Name</span>
@@ -119,7 +124,16 @@ const Contact = () => {
         variants={slideIn('right', 'tween', 0.2, 1)}
         className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
       >
-        <EarthCanvas />
+        <div 
+          className='w-full h-full cursor-move'
+          onMouseEnter={ () => document.querySelector('#root').classList.add('content')
+          }
+          onMouseLeave={
+            () => document.querySelector('#root').classList.remove('content')
+          }
+        >
+          <EarthCanvas />
+        </div>
       </motion.div>
     </div>  
   )

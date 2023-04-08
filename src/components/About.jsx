@@ -13,6 +13,11 @@ const ServiceCard = ({ index, title, icon }) => {
       <motion.div 
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
         className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+        onMouseEnter={ () => document.querySelector('#root').classList.add('content')
+        }
+        onMouseLeave={
+          () => document.querySelector('#root').classList.remove('content')
+        }
       >
         <div 
           options={{
@@ -36,13 +41,24 @@ const About = () => {
     <>  
       <motion.div
       variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview</h2>
+        <p className={styles.sectionSubText}
+              onMouseEnter={ () => document.querySelector('#root').classList.add('content')
+            }
+            onMouseLeave={
+              () => document.querySelector('#root').classList.remove('content')
+            }
+        >Introduction</p>
+        <h2 className={styles.sectionHeadText}
+              onMouseEnter={ () => document.querySelector('#root').classList.add('content')
+            }
+            onMouseLeave={
+              () => document.querySelector('#root').classList.remove('content')
+            }
+        >Overview</h2>
       </motion.div>
       <motion.p
       variants={fadeIn('', '', 0.1, 1)}
-      className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
-      >
+      className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'>
         I am a web developer with a passion for creating beautiful and functional websites. I love work, create and learn new technologies. I am currently working as a freelance web developer and I am looking for new opportunities.
       </motion.p>
 
