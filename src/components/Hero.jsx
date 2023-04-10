@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { motion } from 'framer-motion'
 
 import { styles } from '../styles'
 import { ComputersCanvas } from './canvas'
+import { IsDarkContext } from '../context/IsDarkContext';
 
 const Hero = () => {
+const { darkMode } = useContext(IsDarkContext)
+
   return (
     <section className='relative w-full h-screen mx-auto'>
       <div className={`${styles.paddingX} relative inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5 cursor-auto`}>
@@ -20,12 +23,11 @@ const Hero = () => {
             () => document.querySelector('#root').classList.remove('content')
           }
           >
-            <h1 className={`${styles.heroHeadText}
-            text-white`}>
+            <h1 className={!darkMode ? `${styles.heroHeadText}` : `${styles.heroHeadTextBlack}`}>
               Hi, I'm <span className='text-[#915eff]'>Raphael</span>
             </h1>
           </div>
-          <p className={`${styles.heroSubText} mt-2 text-white-100 md:text-lg`}
+          <p className={!darkMode ? `${styles.heroSubText} mt-2 text-white-100 md:text-lg` : `${styles.heroSubText} mt-2 text-black-200 md:text-lg`}
             onMouseEnter={ () => document.querySelector('#root').classList.add('content')
           }
           onMouseLeave={
@@ -34,7 +36,7 @@ const Hero = () => {
           >
           Welcome to my crafting table! This is where I do what I love most: programing beautiful and functional systems! <br />
           </p>
-          <span className='italic text-[16px] text-[#ffffff87]'>
+          <span className={!darkMode ? 'italic text-[16px] text-[#ffffff87]' : 'italic text-[16px] text-[#282828]'}>
              Click on the image below and drag to see the effect. 
            </span>
         </div> 

@@ -52,6 +52,26 @@
   opacity: .5;
 }
 
+.themeicon {
+  color: #ffffff87;
+}
+
+.themeicon:hover {
+  color: #ffffffc9;
+}
+
+.themeicon2 {
+  color: #78767687;
+}
+
+.themeicon2:hover {
+  color: #212020c9;
+ }
+
+.bg-hero-white {
+  background: url(assets/bgwhite.jpg);
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
@@ -70,6 +90,16 @@
     #434343,
     #000000
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.menu-violet-gradient {
+  background: #804dee;
+  background: linear-gradient(-90deg, #6946b5 0%, rgba(29, 25, 39, 0.353) 100%);
+  background: -webkit-linear-gradient(
+    -90deg,
+    #6946b5 0%,
+    rgba(29, 25, 39, 0.353) 100%
+  );
 }
 
 .violet-gradient {

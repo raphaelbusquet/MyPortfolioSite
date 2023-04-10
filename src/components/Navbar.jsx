@@ -1,41 +1,46 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { IsDarkContext } from '../context/IsDarkContext';
 import { Link } from "react-router-dom"
+import { BsSun, BsMoonStars } from "react-icons/bs";
 
 import { styles } from "../styles"
 import { navLinks } from '../constants'
-import { logo, menu, close } from '../assets'
+import { logo, menu, close, logowhitetheme, menublack, closeblack } from '../assets'
 
 const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
- 
+  
+  const { darkMode, setDarkMode } = useContext(IsDarkContext);
+
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}>
+    <nav className={(!darkMode) ? `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary` : `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-white`}> 
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link to='/'
         className='flex items-center gap-2'
         onClick={() => {
           setActive('');
           window.scrollTo(0, 0);
-        }} 
+        }}
         >
-          <img src={logo} alt="logo" 
-          className='w-14 h-14 object-contain' 
+          <img src={darkMode ? logowhitetheme : logo} alt="logo"
+          className='w-14 h-14 object-contain'
           onMouseEnter={ () => document.querySelector('#root').classList.add('content')
           }
           onMouseLeave={
             () => document.querySelector('#root').classList.remove('content')
           }
           />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex" onMouseEnter={ () => document.querySelector('#root').classList.add('content')
+          <p className={(darkMode) ? 'text-[#212020c9] text-[18px] font-bold cursor-pointer flex' : 'text-white text-[18px] font-bold cursor-pointer flex'} 
+          onMouseEnter={ () => document.querySelector('#root').classList.add('content')
           }
           onMouseLeave={
             () => document.querySelector('#root').classList.remove('content')
           }
 
           >
-          
-            Raphael Busquet&nbsp; 
+
+            Raphael Busquet&nbsp;
             <span className='sm:block hidden'>| Web Developer</span>
           </p>
         </Link>
@@ -51,7 +56,7 @@ const Navbar = () => {
             key={link.id}
             className={`${
               active === link.id ? 'text-white' : 'text-secondary'
-            } hover:text-white text-[18px] font-medium cursor-pointer`}
+            } ${(darkMode) ? ' hover:text-[#212020c9] text-[18px] font-medium cursor-pointer ' : 'hover:text-white text-[18px] font-medium cursor-pointer'}`}
             onClick={() => setActive(link.title)}
             >
               <a href={`#${link.id}`}>{link.title}</a>
@@ -60,17 +65,26 @@ const Navbar = () => {
         </ul>
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>
-            <img src={toggle ? close : menu} 
+            <img src={!darkMode ? (toggle ? close : menu) : (toggle ? closeblack : menublack)}
             alt="menu"
             className='w-[28px] h-[28px] object-contain cursor-pointer'
             onClick={() => setToggle(!toggle)}
              />
 
-             <div className={`${!toggle ? 'hidden' : 'flex' } 
-             p-6 black-gradient absolute top-20 right-0
-             mx-4 my-2 min-w-[140px] z-10 rounded-xl
+             <div className={!darkMode ? `${!toggle ? 'hidden' : 'flex' }
+              p-6 black-gradient absolute top-20 right-0
+              mx-4 my-2 min-w-[140px] z-10 rounded-xl
+              ` : `${!toggle ? 'hidden' : 'flex' }
+              p-6 menu-violet-gradient absolute top-20 right-0
+              mx-4 my-2 min-w-[140px] z-10 rounded-xl
              `}>
-                <ul className='list-none flex justify-end items-start flex-col gap-4'>
+                <ul className='list-none flex justify-end items-start flex-col gap-4'
+                  onMouseEnter={ () => document.querySelector('#root').classList.add('content')
+                  }
+                  onMouseLeave={
+                    () => document.querySelector('#root').classList.remove('content')
+                  }
+                >
                   {navLinks.map((link) => (
                   <li
                   key={link.id}
@@ -88,9 +102,20 @@ const Navbar = () => {
                 </ul>
              </div>
         </div>
+
+        <div
+          onMouseEnter={ () => document.querySelector('#root').classList.add('content')
+        }
+        onMouseLeave={
+          () => document.querySelector('#root').classList.remove('content')
+        }
+        >
+          { (!darkMode) ? <BsSun onClick={() => setDarkMode(!darkMode)} className='themeicon cursor-pointer m-3 text-1xl hover:text-2xl' /> : <BsMoonStars onClick={() => setDarkMode(!darkMode)} className='themeicon2 m-3 cursor-pointer font-bold hover:text-xl' /> }
+        </div>
       </div>
     </nav>
   )
 }
 
 export default Navbar
+

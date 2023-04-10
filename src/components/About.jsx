@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { IsDarkContext } from '../context/IsDarkContext'
 import Tilt from "react-parallax-tilt"
 import { motion } from 'framer-motion'
 
@@ -37,18 +38,20 @@ const ServiceCard = ({ index, title, icon }) => {
 }
 
 const About = () => {
+  const { darkMode } = useContext(IsDarkContext)
+
   return (
     <>  
       <motion.div
       variants={textVariant()}>
-        <p className={styles.sectionSubText}
+        <p className={!darkMode ? `${styles.sectionSubText}` : `${styles.sectionSubTextBlack}`}
               onMouseEnter={ () => document.querySelector('#root').classList.add('content')
             }
             onMouseLeave={
               () => document.querySelector('#root').classList.remove('content')
             }
         >Introduction</p>
-        <h2 className={styles.sectionHeadText}
+        <h2 className={!darkMode ? `${styles.sectionHeadText}` : `${styles.sectionHeadTextBlack}`}
               onMouseEnter={ () => document.querySelector('#root').classList.add('content')
             }
             onMouseLeave={

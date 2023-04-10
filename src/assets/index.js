@@ -1,11 +1,16 @@
 import logo from "./logo.svg";
+import logowhitetheme from "./logowhitetheme.svg";
+import bgwhite from "./bgwhite.jpg"
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
+import menublack from "./menublack.svg"
 import close from "./close.svg";
+import closeblack from "./closeblack.svg";
+
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -26,10 +31,6 @@ import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
-// icons
-import sun from "./sun.svg"
-import moon from "./moon.svg"
-
 import carrent from "./carrent.png";
 import firstsite from "./first.png"
 import summarycomponent from "./summarycomponent.jpg";
@@ -38,8 +39,10 @@ import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
 export {
-  sun,
-  moon,
+  bgwhite,
+  closeblack,
+  menublack,
+  logowhitetheme,
   firstsite,
   componentperfum,
   summarycomponent,

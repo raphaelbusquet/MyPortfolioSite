@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { IsDarkContext } from '../context/IsDarkContext'
 import Tilt from 'react-parallax-tilt' // dont use just react-tilt
 import { motion } from 'framer-motion'
 
@@ -8,6 +10,7 @@ import { projects } from '../constants'
 import { fadeIn, textVariant } from '../utils/motion' 
 
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
+
   return (
     <motion.div
       variants={fadeIn("up", "spring", index * 0.5, 0.75)}
@@ -58,6 +61,9 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
 }
 
 const Works = () => {
+
+  const { darkMode } = useContext(IsDarkContext)
+
   return (
     <>
        <motion.div
@@ -70,8 +76,8 @@ const Works = () => {
           () => document.querySelector('#root').classList.remove('content')
         }
         >
-          <p className={styles.sectionSubText}>My work</p>
-          <h2 className={styles.sectionHeadText}>Projects.</h2>
+          <p className={!darkMode ? `${styles.sectionSubText}` : `${styles.sectionSubTextBlack}`}>My work</p>
+          <h2 className={!darkMode ? `${styles.sectionHeadText}` : `${styles.sectionHeadTextBlack}`}>Projects.</h2>
         </div>
 
       </motion.div>
@@ -81,7 +87,7 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
-          Despite not having professional experience yet, I present to you some of the projects I've worked on in the last few months for my personal portfolio. <span className='italic text-[14px] text-[#ffffff87]'>Click on the Github icon to see the entire project.</span>
+          Despite not having professional experience yet, I present to you some of the projects I've worked on in the last few months for my personal portfolio. <span className={!darkMode ? 'italic text-[14px] text-[#ffffff87]' : 'italic text-[14px] text-[#27262687]'}>Click on the Github icon to see the entire project.</span>
         </motion.p>
       </div>
 

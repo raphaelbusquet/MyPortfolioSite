@@ -23,7 +23,7 @@ const Contact = () => {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefaut();
+    e.preventDefault();
     setLoading(true);
 
     
@@ -37,8 +37,7 @@ const Contact = () => {
         to_email: 'raphaelbusquet@outlook.com',
         message: form.message,
       }, '5njwZruXmD6i5-bur'
-      )
-      .then(() => {
+      ).then(() => {
         setLoading(false);
         alert('Thank you. I will get back to you as soon as possible.');
 

@@ -1,9 +1,13 @@
-import { useState, useRef, Suspense } from "react";
+import { useState, useContext, useRef, Suspense } from "react";
+import { IsDarkContext } from "../../context/IsDarkContext";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from 'maath/random/dist/maath-random.esm'
 
 const Stars = (props) => {
+
+  const { darkMode } = useContext(IsDarkContext)
+
   const ref = useRef()
 
   const sphere = random.inSphere( new Float32Array(5000), { radius: 1.2 })
@@ -20,7 +24,7 @@ const Stars = (props) => {
       >
         <PointMaterial 
           transparent
-          color="#f272c8"
+          color={!darkMode ? '#f272c8' : '#000'}
           size={0.002}
           sizeAttenuation={true}
           depthWrite={false}
