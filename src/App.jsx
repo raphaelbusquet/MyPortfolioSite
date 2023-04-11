@@ -9,8 +9,8 @@ const App = () => {
   
     return (
     <BrowserRouter>
-      <div className={!darkMode ? 'relative z-0 bg-primary' : 'relative z-0 bg-white-100'}>
-          <div className={darkMode ? 'bg-hero-white bg-cover bg-no-repeat bg-center' : 'bg-hero-pattern bg-cover bg-no-repeat bg-right-bottom'}>
+      <div className={!darkMode ? 'relative z-0 bg-primary transition-all duration-700' : 'relative z-0 bg-white-100 transition-all duration-700'}>
+          <div className={darkMode ? 'bg-hero-white bg-cover bg-no-repeat bg-center transition-all duration-700' : 'bg-hero-pattern bg-cover bg-no-repeat bg-right-bottom transition-all duration-700'}>
             <Navbar />
             <Hero />
           </div>

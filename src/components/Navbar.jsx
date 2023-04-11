@@ -14,7 +14,7 @@ const Navbar = () => {
   const { darkMode, setDarkMode } = useContext(IsDarkContext);
 
   return (
-    <nav className={(!darkMode) ? `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary` : `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-white`}> 
+    <nav className={(!darkMode) ? `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary transition-all duration-700` : `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-white transition-all duration-700`}> 
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link to='/'
         className='flex items-center gap-2'
@@ -67,7 +67,7 @@ const Navbar = () => {
         <div className='sm:hidden flex flex-1 justify-end items-center'>
             <img src={!darkMode ? (toggle ? close : menu) : (toggle ? closeblack : menublack)}
             alt="menu"
-            className='w-[28px] h-[28px] object-contain cursor-pointer'
+            className='w-[28px] h-[28px] object-contain cursor-pointer sm:mr-10'
             onClick={() => setToggle(!toggle)}
              />
 
@@ -110,7 +110,7 @@ const Navbar = () => {
           () => document.querySelector('#root').classList.remove('content')
         }
         >
-          { (!darkMode) ? <BsSun onClick={() => setDarkMode(!darkMode)} className='themeicon cursor-pointer m-3 text-1xl hover:text-2xl' /> : <BsMoonStars onClick={() => setDarkMode(!darkMode)} className='themeicon2 m-3 cursor-pointer font-bold hover:text-xl' /> }
+          { (!darkMode) ? <BsSun onClick={() => setDarkMode(!darkMode)} className='themeicon cursor-pointer text-1xl hover:text-2xl absolute r-10 top-10 transition-all duration-300'/> : <BsMoonStars onClick={() => setDarkMode(!darkMode)} className='themeicon2 cursor-pointer font-bold hover:text-xl absolute r-10 top-10 transition-all duration-300'/> }
         </div>
       </div>
     </nav>
