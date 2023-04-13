@@ -1,11 +1,15 @@
 import { BrowserRouter } from "react-router-dom";
-import { useContext } from "react";
-import  { IsDarkContext }  from "./context/IsDarkContext";
+// import { useContext } from "react";   **Refactoring Context
+// import  { IsDarkContext }  from "./context/IsDarkContext";
+
+// New way to Call Context
+import { useIsDarkContext } from "./hooks/useIsDarkContext";
 
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Footer } from "./components"
 
 const App = () => {
-  const { darkMode } = useContext(IsDarkContext)
+  // const { darkMode } = useContext(IsDarkContext)
+  const { darkMode } = useIsDarkContext() // Use Hook to refactoring
   
     return (
     <BrowserRouter>
