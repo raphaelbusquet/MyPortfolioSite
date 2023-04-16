@@ -38,7 +38,10 @@ import componentperfum from "./componentperfum.jpg"
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+import audio from "./audio.mp3";
+
 export {
+  audio,
   bgwhite,
   closeblack,
   menublack,

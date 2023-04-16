@@ -5,13 +5,19 @@ import { BsSun, BsMoonStars } from "react-icons/bs";
 
 import { styles } from "../styles"
 import { navLinks } from '../constants'
-import { logo, menu, close, logowhitetheme, menublack, closeblack } from '../assets'
+import { logo, menu, close, logowhitetheme, menublack, closeblack, audio } from '../assets'
+
+// Sound Effects
+import useSound from 'use-sound';
 
 const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
   
   const { darkMode, setDarkMode } = useContext(IsDarkContext);
+
+  
+  const [play] = useSound(audio, { volume: 0.5 });
 
   return (
     <nav className={(!darkMode) ? `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary transition-all duration-700` : `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-white transition-all duration-700`}> 
@@ -110,7 +116,11 @@ const Navbar = () => {
           () => document.querySelector('#root').classList.remove('content')
         }
         >
-          { (!darkMode) ? <BsSun onClick={() => setDarkMode(!darkMode)} className='themeicon cursor-pointer text-1xl hover:text-2xl absolute r-10 top-10 transition-all duration-300'/> : <BsMoonStars onClick={() => setDarkMode(!darkMode)} className='themeicon2 cursor-pointer font-bold hover:text-xl absolute r-10 top-10 transition-all duration-300'/> }
+          { (!darkMode) ? <BsSun onClick={() => setDarkMode(!darkMode)}
+          onMouseUp={play}
+          className='themeicon cursor-pointer text-1xl hover:text-2xl absolute r-10 top-10 transition-all duration-300'/> : <BsMoonStars onClick={() => setDarkMode(!darkMode)}
+          onMouseUp={play}
+          className='themeicon2 cursor-pointer font-bold hover:text-xl absolute r-10 top-10 transition-all duration-300'/> }
         </div>
       </div>
     </nav>
