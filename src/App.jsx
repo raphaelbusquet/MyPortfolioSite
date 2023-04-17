@@ -10,7 +10,7 @@ import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Stars
 const App = () => {
   // const { darkMode } = useContext(IsDarkContext)
   const { darkMode } = useIsDarkContext() // Use Hook to refactoring
-  
+
     return (
     <BrowserRouter>
       <div className={!darkMode ? 'relative z-0 bg-primary transition-all duration-700' : 'relative z-0 bg-white-100 transition-all duration-700'}>

@@ -11,7 +11,6 @@ import menublack from "./menublack.svg"
 import close from "./close.svg";
 import closeblack from "./closeblack.svg";
 
-
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
@@ -38,10 +37,14 @@ import componentperfum from "./componentperfum.jpg"
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
-import audio from "./audio.mp3";
+import audioTheme from "./audio.mp3";
+import audioLink from "./link.mp3";
+import audioSpace from "./space.wav";
 
 export {
-  audio,
+  audioSpace,
+  audioLink,
+  audioTheme,
   bgwhite,
   closeblack,
   menublack,

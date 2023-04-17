@@ -1,4 +1,4 @@
-import { useState, useContext, useRef, Suspense } from "react";
+import { useContext, useRef, Suspense } from "react";
 import { IsDarkContext } from "../../context/IsDarkContext";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";

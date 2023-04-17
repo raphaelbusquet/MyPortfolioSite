@@ -5,8 +5,13 @@ import { styles } from '../styles'
 import { ComputersCanvas } from './canvas'
 import { IsDarkContext } from '../context/IsDarkContext';
 
+import useSound from 'use-sound';
+import { audioLink } from '../assets';
+
 const Hero = () => {
 const { darkMode } = useContext(IsDarkContext)
+
+const [playLink] = useSound(audioLink, {volume: 0.2});
 
   return (
     <section className='relative w-full h-screen mx-auto'>
@@ -57,6 +62,7 @@ const { darkMode } = useContext(IsDarkContext)
           onMouseLeave={
             () => document.querySelector('#root').classList.remove('content')
           }
+          onMouseUp={playLink}
         >
           <a href="#about">
             <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>

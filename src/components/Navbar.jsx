@@ -5,7 +5,7 @@ import { BsSun, BsMoonStars } from "react-icons/bs";
 
 import { styles } from "../styles"
 import { navLinks } from '../constants'
-import { logo, menu, close, logowhitetheme, menublack, closeblack, audio } from '../assets'
+import { logo, menu, close, logowhitetheme, menublack, closeblack, audioTheme, audioLink } from '../assets'
 
 // Sound Effects
 import useSound from 'use-sound';
@@ -17,8 +17,9 @@ const Navbar = () => {
   const { darkMode, setDarkMode } = useContext(IsDarkContext);
 
   
-  const [play] = useSound(audio, { volume: 0.5 });
-
+  const [playTheme] = useSound(audioTheme, { volume: 0.1 });
+  const [playLink] = useSound(audioLink, { volume: 0.2 });
+    
   return (
     <nav className={(!darkMode) ? `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary transition-all duration-700` : `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-white transition-all duration-700`}> 
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
@@ -28,6 +29,7 @@ const Navbar = () => {
           setActive('');
           window.scrollTo(0, 0);
         }}
+        onMouseUp={playLink}
         >
           <img src={darkMode ? logowhitetheme : logo} alt="logo"
           className='w-14 h-14 object-contain'
@@ -64,6 +66,7 @@ const Navbar = () => {
               active === link.id ? 'text-white' : 'text-secondary'
             } ${(darkMode) ? ' hover:text-[#212020c9] text-[18px] font-medium cursor-pointer ' : 'hover:text-white text-[18px] font-medium cursor-pointer'}`}
             onClick={() => setActive(link.title)}
+            onMouseUp={playLink}
             >
               <a href={`#${link.id}`}>{link.title}</a>
             </li>
@@ -117,9 +120,9 @@ const Navbar = () => {
         }
         >
           { (!darkMode) ? <BsSun onClick={() => setDarkMode(!darkMode)}
-          onMouseUp={play}
+          onMouseUp={playTheme}
           className='themeicon cursor-pointer text-1xl hover:text-2xl absolute r-10 top-10 transition-all duration-300'/> : <BsMoonStars onClick={() => setDarkMode(!darkMode)}
-          onMouseUp={play}
+          onMouseUp={playTheme}
           className='themeicon2 cursor-pointer font-bold hover:text-xl absolute r-10 top-10 transition-all duration-300'/> }
         </div>
       </div>
