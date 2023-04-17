@@ -2,14 +2,38 @@ import { BrowserRouter } from "react-router-dom";
 // import { useContext } from "react";   **Refactoring Context
 // import  { IsDarkContext }  from "./context/IsDarkContext";
 
+import { useRef, useEffect, useState } from "react";
+
 // New way to Call Context
 import { useIsDarkContext } from "./hooks/useIsDarkContext";
 
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Footer } from "./components"
 
+import audioSpace from "./assets/space.wav"
+
+import useSound from "use-sound";
+
 const App = () => {
   // const { darkMode } = useContext(IsDarkContext)
   const { darkMode } = useIsDarkContext() // Use Hook to refactoring
+
+  // Play music 
+  const [play, {stop}] = useSound(audioSpace, {volume: 0.1});
+  
+  // Using useState to keep the value of my element visibility
+  const [myElementIsVisible, setMyElementIsVisible] = useState();
+
+  // Using a ref to acess my DOM element
+  const myRef = useRef();
+
+  // Using useEffect and creating a new observer 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0]
+      setMyElementIsVisible(entry.isIntersecting)
+    })
+    observer.observe(myRef.current)
+  }, [])
 
     return (
     <BrowserRouter>
@@ -23,7 +47,7 @@ const App = () => {
           <Tech />
           <Works />
           <Feedbacks />
-          <div className="relative z-0">
+          <div ref={myRef} className="relative z-0" onScroll={myElementIsVisible ? play() : stop()}>
             <Contact />
             <StarsCanvas />
           </div>

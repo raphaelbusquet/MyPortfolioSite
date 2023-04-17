@@ -62,7 +62,7 @@ const [playLink] = useSound(audioLink, {volume: 0.2});
           onMouseLeave={
             () => document.querySelector('#root').classList.remove('content')
           }
-          onMouseUp={playLink}
+          onClick={playLink}
         >
           <a href="#about">
             <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>

@@ -28,8 +28,8 @@ const Navbar = () => {
         onClick={() => {
           setActive('');
           window.scrollTo(0, 0);
+          playLink()
         }}
-        onMouseUp={playLink}
         >
           <img src={darkMode ? logowhitetheme : logo} alt="logo"
           className='w-14 h-14 object-contain'
@@ -65,8 +65,10 @@ const Navbar = () => {
             className={`${
               active === link.id ? 'text-white' : 'text-secondary'
             } ${(darkMode) ? ' hover:text-[#212020c9] text-[18px] font-medium cursor-pointer ' : 'hover:text-white text-[18px] font-medium cursor-pointer'}`}
-            onClick={() => setActive(link.title)}
-            onMouseUp={playLink}
+            onClick={() => {
+              setActive(link.title);
+              playLink()
+            }}
             >
               <a href={`#${link.id}`}>{link.title}</a>
             </li>
@@ -119,10 +121,14 @@ const Navbar = () => {
           () => document.querySelector('#root').classList.remove('content')
         }
         >
-          { (!darkMode) ? <BsSun onClick={() => setDarkMode(!darkMode)}
-          onMouseUp={playTheme}
-          className='themeicon cursor-pointer text-1xl hover:text-2xl absolute r-10 top-10 transition-all duration-300'/> : <BsMoonStars onClick={() => setDarkMode(!darkMode)}
-          onMouseUp={playTheme}
+          { (!darkMode) ? <BsSun onClick={() => {
+            setDarkMode(!darkMode);
+            playTheme()
+          }}
+          className='themeicon cursor-pointer text-1xl hover:text-2xl absolute r-10 top-10 transition-all duration-300'/> : <BsMoonStars onClick={() => {
+            setDarkMode(!darkMode);
+            playTheme()
+          }}
           className='themeicon2 cursor-pointer font-bold hover:text-xl absolute r-10 top-10 transition-all duration-300'/> }
         </div>
       </div>
