@@ -18,7 +18,7 @@ const Navbar = () => {
 
   
   const [playTheme] = useSound(audioTheme, { volume: 0.1 });
-  const [playLink] = useSound(audioLink, { volume: 0.2 });
+  const [playLink] = useSound(audioLink, { volume: 0.4 });
     
   return (
     <nav className={(!darkMode) ? `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary transition-all duration-700` : `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-white transition-all duration-700`}> 

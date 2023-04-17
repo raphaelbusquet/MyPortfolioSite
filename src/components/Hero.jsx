@@ -11,7 +11,7 @@ import { audioLink } from '../assets';
 const Hero = () => {
 const { darkMode } = useContext(IsDarkContext)
 
-const [playLink] = useSound(audioLink, {volume: 0.2});
+const [playLink] = useSound(audioLink, {volume: 0.4});
 
   return (
     <section className='relative w-full h-screen mx-auto'>
