@@ -6,6 +6,8 @@ import { styles } from '../styles'
 import { EarthCanvas } from './canvas'
 import { SectionWrapper } from '../hoc'
 import { slideIn } from '../utils/motion'
+import { github, cv, linkedin, cvdoc } from '../assets'
+import { Link } from 'react-router-dom'
 
 const Contact = () => {
   const formRef = useRef();
@@ -117,6 +119,34 @@ const Contact = () => {
           </button>
           
         </form>
+
+        <div className='flex justify-center items-center gap-2 mt-10'>
+
+          <h3>Or try these links:</h3>
+
+          <div
+            onClick={() => window.open('https://github.com/raphaelbusquet', "_blank")}
+            className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+          >
+            <img src={github} alt="github"
+              className='w-1/2 h-1/2 object-contain' />
+          </div>
+
+          <div
+            onClick={() => window.open('https://linkedin.com/in/raphaelbusquet', "_blank")}
+            className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+          >
+            <img src={linkedin} alt="linkedin"
+              className='w-1/2 h-1/2 object-contain' />
+          </div>
+
+          <Link to={cvdoc} target='_blank' download
+            className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+          >
+            <img src={cv} alt="curriculum vitae"
+              className='w-1/2 h-1/2 object-contain' />
+          </Link>
+        </div>
       </motion.div>
 
       <motion.div

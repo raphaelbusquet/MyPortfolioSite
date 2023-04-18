@@ -6,6 +6,8 @@ import creator from "./creator.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
 import github from "./github.png";
+import cv from "./cv.png";
+import linkedin from "./linkedin.png";
 import menu from "./menu.svg";
 import menublack from "./menublack.svg"
 import close from "./close.svg";
@@ -41,7 +43,12 @@ import audioTheme from "./audio.mp3";
 import audioLink from "./link.mp3";
 import audioSpace from "./space.wav";
 
+import cvdoc from "./WebDev-CV-en_pt.pdf"
+
 export {
+  cvdoc,
+  cv,
+  linkedin,
   audioSpace,
   audioLink,
   audioTheme,

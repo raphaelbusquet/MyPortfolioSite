@@ -13,13 +13,14 @@ import audioSpace from "./assets/space.wav"
 
 import useSound from "use-sound";
 
+
 const App = () => {
   // const { darkMode } = useContext(IsDarkContext)
   const { darkMode } = useIsDarkContext() // Use Hook to refactoring
 
   // Play music 
-  const [play, {stop}] = useSound(audioSpace, {volume: 0.2});
-  
+  const [play, { stop }] = useSound(audioSpace, {volume: 0.2});
+
   // Using useState to keep the value of my element visibility
   const [myElementIsVisible, setMyElementIsVisible] = useState();
 
@@ -47,7 +48,8 @@ const App = () => {
           <Tech />
           <Works />
           <Feedbacks />
-          <div ref={myRef} className="relative z-0" onScroll={myElementIsVisible ? play() : stop()}>
+          <div ref={myRef} className="relative z-0" onScroll={myElementIsVisible ? play() : stop()}
+          >
             <Contact />
             <StarsCanvas />
           </div>
