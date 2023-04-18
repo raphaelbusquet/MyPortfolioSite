@@ -19,7 +19,7 @@ const App = () => {
   const { darkMode } = useIsDarkContext() // Use Hook to refactoring
 
   // Play music 
-  const [play, { stop }] = useSound(audioSpace, {volume: 0.2});
+  const [play, { stop }] = useSound(audioSpace, {volume: 0.3});
 
   // Using useState to keep the value of my element visibility
   const [myElementIsVisible, setMyElementIsVisible] = useState();
