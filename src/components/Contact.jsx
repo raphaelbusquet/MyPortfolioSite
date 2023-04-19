@@ -30,7 +30,7 @@ const Contact = () => {
 
     
     emailjs.send(
-      'service_aljssnn',
+      'service_ezot80w',
       'template_wozpwp4',
       {
         from_name: form.name,
