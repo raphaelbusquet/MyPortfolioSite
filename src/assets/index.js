@@ -38,6 +38,8 @@ import summarycomponent from "./summarycomponent.jpg";
 import componentperfum from "./componentperfum.jpg"
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import arrowUpBlack from "./arrowUpBlack.svg"
+import arrowUpWhite from "./arrowUpWhite.svg"
 
 import audioTheme from "./audio.mp3";
 import audioLink from "./link.mp3";
@@ -46,6 +48,8 @@ import audioSpace from "./space.wav";
 import cvdoc from "./WebDev-CV-en_pt.pdf"
 
 export {
+  arrowUpWhite,
+  arrowUpBlack,
   cvdoc,
   cv,
   linkedin,

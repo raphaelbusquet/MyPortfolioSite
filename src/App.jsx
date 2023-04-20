@@ -7,7 +7,7 @@ import { useRef, useEffect, useState } from "react";
 // New way to Call Context
 import { useIsDarkContext } from "./hooks/useIsDarkContext";
 
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Footer } from "./components"
+import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Footer, ScrollButton } from "./components"
 
 import audioSpace from "./assets/space.wav"
 
@@ -54,6 +54,7 @@ const App = () => {
             <StarsCanvas />
           </div>
           <Footer />
+          <ScrollButton />
         </div>
       </BrowserRouter>
   )
