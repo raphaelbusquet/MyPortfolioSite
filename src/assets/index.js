@@ -45,7 +45,7 @@ import audioTheme from "./audio.mp3";
 import audioLink from "./link.mp3";
 import audioSpace from "./space.wav";
 
-import cvdoc from "./WebDev-CV-en_pt.pdf"
+import cvdoc from "./WebDevCV-EN.pdf"
 
 export {
   arrowUpWhite,
