@@ -77,7 +77,7 @@ const Works = () => {
         }
         >
           <p className={!darkMode ? `${styles.sectionSubText}` : `${styles.sectionSubTextBlack}`}>My work</p>
-          <h2 className={!darkMode ? `${styles.sectionHeadText}` : `${styles.sectionHeadTextBlack}`}>Projects.</h2>
+          <h2 className={!darkMode ? `${styles.sectionHeadText}` : `${styles.sectionHeadTextBlack}`}>Some Projects.</h2>
         </div>
 
       </motion.div>
@@ -87,7 +87,7 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
-          Despite not having professional experience yet, I present to you some of the projects I've worked on in the last few months for my personal portfolio. <span className={!darkMode ? 'italic text-[14px] text-[#ffffff87]' : 'italic text-[14px] text-[#27262687]'}>Click on the Github icon to see the entire project.</span>
+          Here are some of my favorite projects, you can check out more on my GitHub. <span className={!darkMode ? 'italic text-[14px] text-[#ffffff87]' : 'italic text-[14px] text-[#27262687]'}>Click on the Github icon to see the entire project.</span>
         </motion.p>
       </div>
 
@@ -110,4 +110,4 @@ const Works = () => {
   )
 }
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, "projects");

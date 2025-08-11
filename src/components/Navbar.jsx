@@ -5,7 +5,7 @@ import { BsSun, BsMoonStars } from "react-icons/bs";
 
 import { styles } from "../styles"
 import { navLinks } from '../constants'
-import { logo, menu, close, logowhitetheme, menublack, closeblack, audioTheme, audioLink } from '../assets'
+import { photoProfile, menu, close, logowhitetheme, menublack, closeblack, audioTheme, audioLink } from '../assets'
 
 // Sound Effects
 import useSound from 'use-sound';
@@ -21,7 +21,7 @@ const Navbar = () => {
   const [playLink] = useSound(audioLink, { volume: 0.4 });
     
   return (
-    <nav className={(!darkMode) ? `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary transition-all duration-700` : `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-white transition-all duration-700`}> 
+    <nav className={(!darkMode) ? `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary transition-all duration-700` : `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-white transition-all duration-700her`}> 
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link to='/'
         className='flex items-center gap-2'
@@ -31,14 +31,16 @@ const Navbar = () => {
           playLink()
         }}
         >
-          <img src={darkMode ? logowhitetheme : logo} alt="logo"
-          className='w-14 h-14 object-contain'
-          onMouseEnter={ () => document.querySelector('#root').classList.add('content')
-          }
-          onMouseLeave={
-            () => document.querySelector('#root').classList.remove('content')
-          }
+          <div className='flex justify-center items-center rounded-lg'>
+            <img src={darkMode ? photoProfile : photoProfile} alt="logo"
+            className='w-28 h-28 rounded-full object-cover object-[center_20%]'
+            onMouseEnter={ () => document.querySelector('#root').classList.add('content')
+            }
+            onMouseLeave={
+              () => document.querySelector('#root').classList.remove('content')
+            }
           />
+          </div>
           <p className={(darkMode) ? 'text-[#212020c9] text-[18px] font-bold cursor-pointer flex' : 'text-white text-[18px] font-bold cursor-pointer flex'} 
           onMouseEnter={ () => document.querySelector('#root').classList.add('content')
           }

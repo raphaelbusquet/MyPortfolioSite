@@ -62,7 +62,7 @@ const About = () => {
       <motion.p
       variants={fadeIn('', '', 0.1, 1)}
       className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'>
-        I am a web developer with a passion for creating beautiful and functional websites. I love work, create and learn new technologies. I am currently working as a freelance web developer and I am looking for new opportunities.
+        I am a motivated Full-Stack Developer with a strong focus on front-end technologies such as TypeScript, Angular, ReactJS, and .NET. With a passion for building elegant, scalable, and high-performing digital solutions, I enjoy transforming ideas into impactful user experiences. 
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>

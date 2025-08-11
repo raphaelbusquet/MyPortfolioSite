@@ -53,7 +53,7 @@ const Feedbacks = () => {
             <p className={styles.sectionSubText}>What others say</p>
             <h2 className={styles.sectionHeadText}>Testimonials.</h2>
           </div>
-          <p className="italic text-[14px] text-[#ffffff87]">ps.: I really hope to get one of these testimonials soon! </p>
+          <p className="italic text-[14px] text-[#ffffff87]"> I couple testimonials from people I’ve worked with closely.</p>
         </motion.div>
       </div>
 

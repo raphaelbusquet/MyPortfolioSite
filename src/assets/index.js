@@ -1,4 +1,5 @@
 import logo from "./logo.svg";
+import photoProfile from "./photoProfile.jpeg";
 import logowhitetheme from "./logowhitetheme.svg";
 import bgwhite from "./bgwhite.jpg"
 import backend from "./backend.png";
@@ -6,6 +7,7 @@ import creator from "./creator.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
 import github from "./github.png";
+import fiverr from "./fiverr.png";
 import cv from "./cv.png";
 import linkedin from "./linkedin.png";
 import menu from "./menu.svg";
@@ -46,6 +48,12 @@ import audioLink from "./link.mp3";
 import audioSpace from "./space.wav";
 
 import cvdoc from "./WebDevCV-EN.pdf"
+
+import gabrielProfilePhoto from "./gabrielProfilePhoto.jpg";
+import jhonathanProfilePhoto from "./jhonathanProfilePhoto.jpeg";
+import doutorAgenda from "./doutorAgenda.png";
+import imajicoffe from "./imajicoffe.png";
+import RFMsite from "./RFMsite.png";
 
 export {
   arrowUpWhite,
@@ -91,4 +99,11 @@ export {
   carrent,
   jobit,
   tripguide,
+  photoProfile,
+  fiverr,
+  gabrielProfilePhoto,
+  jhonathanProfilePhoto,
+  doutorAgenda,
+  imajicoffe,
+  RFMsite
 };

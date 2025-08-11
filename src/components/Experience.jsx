@@ -21,7 +21,7 @@ const ExperienceCard = ({ experience }) => (
     icon={
         <div className="flex justify-center items-center h-full w-full">
           <img src={experience.icon} alt={experience.company_name} 
-          className="w-[60%] h-[60%] object-contain"
+          className="w-[100%] h-[100%]"
           />
         </div>
     }
@@ -66,7 +66,8 @@ const Experience = () => {
             () => document.querySelector('#root').classList.remove('content')
           }
         >Work Experience.</h2>
-        <p className='mt-4 text-secondary text-[17px] leading-[30px]'>As you know, I'm looking for my first professional opportunity, but here's an example of what this section would look like if it was fully complete. Soon it will be complete with my real experiences... </p>
+        <p className='mt-4 text-secondary text-[17px] leading-[30px]'>My journey in programming is fueled by continuous learning and diverse project experiences—including freelance work where I handle frontend adaptability, bug fixing, backend database integration, and API development. Prior to my development career, I gained valuable skills and insights from roles in sales, logistics, and real estate, which enrich my approach to solving problems and collaborating in teams.
+        </p>
 
       </motion.div>
 
