@@ -45,7 +45,7 @@ import arrowUpWhite from "./arrowUpWhite.svg"
 
 import audioTheme from "./audio.mp3";
 import audioLink from "./link.mp3";
-import audioSpace from "./space.wav";
+import audioSpace from "./space.mp3";
 
 import cvdoc from "./WebDevCV-EN.pdf"
 

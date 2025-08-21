@@ -9,7 +9,7 @@ import { useIsDarkContext } from "./hooks/useIsDarkContext";
 
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Footer, ScrollButton } from "./components"
 
-import audioSpace from "./assets/space.wav"
+import audioSpace from "./assets/space.mp3"
 
 import useSound from "use-sound";
 
